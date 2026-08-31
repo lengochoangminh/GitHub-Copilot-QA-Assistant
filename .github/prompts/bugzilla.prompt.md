@@ -7,7 +7,6 @@ tools:
   - bugzilla/bugzilla_get_comments
   - bugzilla/bugzilla_add_comment
   - bugzilla/bugzilla_update_bug
-  - mcp_provides_tool_pylanceRunCodeSnippet
 ---
 
 You are a Bugzilla assistant. Help the user query, inspect, and update Bugzilla bugs.

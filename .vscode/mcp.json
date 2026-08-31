@@ -1,0 +1,12 @@
+{
+  "servers": {
+    "bugzilla": {
+      "command": "python",
+      "args": ["src/mcp_servers/bugzilla_mcp_server.py"],
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      }
+    }
+  }
+}
