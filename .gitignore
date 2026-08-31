@@ -1,0 +1,22 @@
+# IDE setup
+# .vscode/
+
+# Python cache
+__pycache__/
+.pytest_cache/
+
+# Log files
+*.log
+
+# Virtual environment
+venv/
+
+# Python compiled files
+.__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+
+.idea/
+.env
