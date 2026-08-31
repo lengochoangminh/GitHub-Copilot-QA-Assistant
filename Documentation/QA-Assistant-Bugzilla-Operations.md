@@ -1,5 +1,8 @@
 # GitHub Copilot QA Assistant - Bugzilla operations
 
+> ⚠️ **Internal Network Access Required** <br>
+> Bugzilla (`https://bugzilla.tp-link.com`) is **an internal company system**. All MCP tools and workflow scripts that interact with these services will fail if run outside the company network or VPN. Ensure you are connected to the internal network before using this project.
+
 This project exposes Bugzilla operations to GitHub Copilot through an MCP server. The current implementation lets Copilot read Bugzilla bugs, search bugs, read comments, add comments, update bugs, and create new bugs by calling Python code in this repository.
 
 The repository already contains two important customization points:

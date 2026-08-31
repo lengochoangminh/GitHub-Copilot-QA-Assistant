@@ -7,6 +7,14 @@
       "env": {
         "PYTHONPATH": "${workspaceFolder}/src"
       }
+    },
+    "jira-server": {
+      "command": "python",
+      "args": ["src/mcp_servers/jira_mcp_server.py"],
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      }
     }
   }
 }

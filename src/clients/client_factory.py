@@ -2,6 +2,7 @@ import os
 import sys
 
 from clients.bugzilla_client import BugzillaClient
+from clients.jira_client import JiraClient
 
 # Ensure the `utils` directory is in the PATH.
 _src_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -67,6 +68,10 @@ def get_client(system_name: str):
         api_key = _get_env_or_input("BUGZILLA_API_KEY", "Enter Bugzilla API key (press Enter to skip): ").strip()
         
         client = BugzillaClient(base_url, cookie, api_key if api_key else None)    
+    elif system_name == "jira-server":
+        base_url = _get_env_or_input("JIRA_BASE_URL", "Enter Jira base URL: ")
+        cookie = _get_env_or_input("JIRA_COOKIE", "Enter Jira cookie: ")
+        client = JiraClient(base_url, cookie)        
     else:
         raise ValueError(f"Unknown system: {system_name}")
 
