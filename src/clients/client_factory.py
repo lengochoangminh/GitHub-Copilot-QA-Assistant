@@ -2,6 +2,7 @@ import os
 import sys
 
 from clients.bugzilla_client import BugzillaClient
+from clients.confluence_client import ConfluenceClient
 from clients.jira_client import JiraClient
 
 # Ensure the `utils` directory is in the PATH.
@@ -72,6 +73,10 @@ def get_client(system_name: str):
         base_url = _get_env_or_input("JIRA_BASE_URL", "Enter Jira base URL: ")
         cookie = _get_env_or_input("JIRA_COOKIE", "Enter Jira cookie: ")
         client = JiraClient(base_url, cookie)        
+    elif system_name == "confluence-server":
+        base_url = _get_env_or_input("CONFLUENCE_BASE_URL", "Enter Confluence base URL: ")
+        cookie = _get_env_or_input("CONFLUENCE_COOKIE", "Enter Confluence cookie: ")
+        client = ConfluenceClient(base_url, cookie)
     else:
         raise ValueError(f"Unknown system: {system_name}")
 

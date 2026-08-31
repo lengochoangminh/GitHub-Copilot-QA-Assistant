@@ -15,6 +15,14 @@
       "env": {
         "PYTHONPATH": "${workspaceFolder}/src"
       }
+    },
+    "confluence-server": {
+      "command": "python",
+      "args": ["src/mcp_servers/confluence_mcp_server.py"],
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      }
     }
   }
 }
