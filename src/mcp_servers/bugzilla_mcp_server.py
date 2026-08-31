@@ -6,15 +6,20 @@ Note: Bugzilla 4.0.1 uses JSON-RPC (/jsonrpc.cgi).
       All client methods return dictionaries directly, not Response objects.
 """
 
-import os
+import os, io
 import sys
 
 from mcp.server.fastmcp import FastMCP
 
-# Add the src directory to the path so 'clients' package is importable
+if hasattr(sys.stdout, "buffer"):
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
+if hasattr(sys.stderr, "buffer"):
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8")
+    
+# Add src to path so sibling packages like 'clients' are importable
 current_dir = os.path.dirname(os.path.abspath(__file__))
-workspace_root = os.path.abspath(os.path.join(current_dir, "..", ".."))
-sys.path.insert(0, workspace_root)
+src_dir = os.path.abspath(os.path.join(current_dir, ".."))
+sys.path.insert(0, src_dir)
 
 from clients.client_factory import get_client
 # from business.bugzilla_to_jira.bugzilla_to_jira import run_workflow
